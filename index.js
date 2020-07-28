@@ -10,8 +10,13 @@ function getDogImage(){
 function handleForm(){
   $('form').submit(event => {
     event.preventDefault();
-    $('.results-img').remove();
-    getDogImage();
+    if($('.js-number-of-images').val() > 0 && $('.js-number-of-images').val() <= 50){
+      $('.results-img').remove();
+      getDogImage();
+    }
+    else {
+      alert("Please input a number from 1 to 50");
+    }
   });
 };
 
